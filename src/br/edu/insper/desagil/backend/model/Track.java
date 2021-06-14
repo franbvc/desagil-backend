@@ -29,10 +29,11 @@ public class Track {
 		int seconds = 0;
 		
 		minutes += (int) this.duration/60; 
-		seconds += ((this.duration/60) - minutes)*60;
+		seconds += (((double) this.duration/60) - minutes)*60;
 		
 		durationString += minutes;
 		durationString += ":";
+		
 		
 		if (seconds < 10) {
 			durationString += "0" + seconds;

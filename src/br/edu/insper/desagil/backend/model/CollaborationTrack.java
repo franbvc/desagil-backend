@@ -23,7 +23,7 @@ public class CollaborationTrack extends Track {
 			numCollabs ++;
 			
 			if (numCollabs != collaborators.size()) {
-				output += ",";
+				output += ", ";
 			}
 		}
 		
