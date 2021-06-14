@@ -2,6 +2,8 @@ package br.edu.insper.desagil.backend.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Arrays;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,56 +14,67 @@ class TrackTest {
 
 	@Test
 	void testZeroSeconds() {
-		assertEquals(true, false);
+		Track track = new Track(new Artist("Anitta"), "Atencion", 0);
+		assertEquals("0:00", track.getDurationString());
 	}
 
 	@Test
 	void testFiveSeconds() {
-		assertEquals(true, false);
+		Track track = new Track(new Artist("Anitta"), "Atencion", 5);
+		assertEquals("0:05", track.getDurationString());
 	}
 
 	@Test
 	void testTwentyFiveSeconds() {
-		assertEquals(true, false);
+		Track track = new Track(new Artist("Anitta"), "Atencion", 25);
+		assertEquals("0:25", track.getDurationString());
 	}
 
 	@Test
 	void testOneMinuteZeroSeconds() {
-		assertEquals(true, false);
+		Track track = new Track(new Artist("Anitta"), "Atencion", 60);
+		assertEquals("1:00", track.getDurationString());
 	}
 
 	@Test
 	void testOneMinuteFiveSeconds() {
-		assertEquals(true, false);
+		Track track = new Track(new Artist("Anitta"), "Atencion", 65);
+		assertEquals("1:05", track.getDurationString());
 	}
 
 	@Test
 	void testOneMinuteTwentyFiveSeconds() {
-		assertEquals(true, false);
+		Track track = new Track(new Artist("Anitta"), "Atencion", 85);
+		assertEquals("1:25", track.getDurationString());
 	}
 
 	@Test
 	void testTwoMinutesZeroSeconds() {
-		assertEquals(true, false);
+		Track track = new Track(new Artist("Anitta"), "Atencion", 120);
+		assertEquals("2:00", track.getDurationString());
 	}
 
 	@Test
 	void testTwoMinutesFiveSeconds() {
-		assertEquals(true, false);
+		Track track = new Track(new Artist("Anitta"), "Atencion", 125);
+		assertEquals("2:05", track.getDurationString());
 	}
 
 	@Test
 	void testTwoMinutesTwentyFiveSeconds() {
-		assertEquals(true, false);
+		Track track = new Track(new Artist("Anitta"), "Atencion", 145);
+		assertEquals("2:25", track.getDurationString());
 	}
 
 	@Test
 	void testOneCollaborator() {
-		assertEquals(true, false);
+		CollaborationTrack colab = new CollaborationTrack(new Artist("Anitta"), Arrays.asList(new Artist("Becky G")), "Banana", 195);
+		assertEquals("Anitta (feat. Becky G)", colab.getFullArtistName());
 	}
 
 	@Test
 	void testTwoCollaborators() {
-		assertEquals(true, false);
+		CollaborationTrack colab = new CollaborationTrack(new Artist("Anitta"), Arrays.asList(new Artist("Ludmilla"), new Artist("Snoop Dog")), "Banana", 195);
+		assertEquals("Anitta (feat. Ludmilla, Snoop Dog)", colab.getFullArtistName());
 	}
 }
